@@ -16,7 +16,8 @@ shinyServer(function(input,output,session){
       theme(plot.margin = margin(2,0.5,0.5,0.5,"cm"),plot.title = element_text(size = 12)) +
       xlab("Age Groups") +
       ylab("Population (in Millions)") +
-      scale_fill_discrete(name = "Broad Age Groups")
+      scale_fill_manual(name = "Broad Age Groups", values = c("#03045e","#0077b6","#00b4d8","#90e0ef"))
+      
     
     ggplotly(Plot,tooltip = c("x", "y")) %>%
       layout(title = list(text = paste0("Saudi Arabia's Population by Age Groups",
@@ -42,7 +43,6 @@ shinyServer(function(input,output,session){
       group_by(year,nationality) %>%
       summarise(Population = sum(population)) %>%
       ggplot(aes(x = year, y = Population , color = nationality)) +
-      scale_color_discrete(name = "Nationality") +
       geom_line() +
       geom_point() +
       xlab("Year") +
@@ -52,7 +52,9 @@ shinyServer(function(input,output,session){
       scale_x_date(date_breaks = "1 year",date_labels = "%Y") +
       geom_hline(yintercept = 13500000, linetype = "dashed", color = "darkgreen") +
       geom_hline(yintercept = 12500000, linetype = "dashed", color = "red") +
-      theme(plot.margin = margin(1,1,1,1,"cm"),plot.title = element_text(size = 12))
+      theme(plot.margin = margin(1,1,1,1,"cm"),plot.title = element_text(size = 12)) +
+      scale_color_manual(name = "Nationality", values = c("#03045e","#0077b6","#00b4d8","#90e0ef"))
+    
 
     ggplotly(Plot,tooltip = c("x", "y")) %>%
       layout(title = list(text = paste0("Evolution of Saudi Arabia's population by Nationality \n between 2010 and 2022",
@@ -82,11 +84,11 @@ shinyServer(function(input,output,session){
       geom_line() +
       xlab("Year") +
       ylab("Population (in Millions)") +
-      scale_color_discrete(name = "Gender") +
       theme_classic() +
       scale_y_continuous(labels = label_number(suffix = " M", scale = 1e-6)) +
       scale_x_date(date_breaks = "1 year",date_labels = "%Y") +
-      theme(plot.margin = margin(1.5,0.5,0.5,0.5,"cm"),plot.title = element_text(size = 12))
+      theme(plot.margin = margin(3,0.5,0.5,0.5,"cm"),plot.title = element_text(size = 12)) +
+      scale_color_manual(name = "Gender", values = c("#03045e","#0077b6","#00b4d8","#90e0ef"))
     
     ggplotly(Plot,tooltip = c("text", "y")) %>%
       layout(title = list(text = paste0("Evolution of Saudi Arabia's population by Gender \n between 2010 and 2022",
@@ -117,12 +119,11 @@ shinyServer(function(input,output,session){
       geom_line() +
       xlab("Year") +
       ylab("Population (in Millions)") +
-      scale_color_discrete(name = "Gender nationality") +
-      scale_color_manual(values = c("#03045e","#0077b6","#00b4d8","#90e0ef")) +
+      scale_color_manual(name = "Gender nationality", values = c("#03045e","#0077b6","#00b4d8","#90e0ef")) +
       theme_classic() +
       scale_y_continuous(labels = label_number(suffix = " M", scale = 1e-6)) +
       scale_x_date(date_breaks = "1 year",date_labels = "%Y") +
-      theme(plot.margin = margin(2,0.5,0.5,0.5,"cm"),plot.title = element_text(size = 12))
+      theme(plot.margin = margin(3.5,0.5,0.5,0.5,"cm"),plot.title = element_text(size = 12))
     
     ggplotly(Plot,tooltip = c("text", "y","Gender nationality")) %>%
       layout(title = list(text = paste0("Evolution of Saudi Arabia's population by Gender \n and Nationality between 2010 and 2022",
@@ -189,7 +190,7 @@ shinyServer(function(input,output,session){
       theme(plot.margin = margin(2,0.5,0.5,0.5,"cm"),plot.title = element_text(size = 12)) +
       xlab("Age Groups") +
       ylab("Population (in Millions)") +
-      scale_fill_discrete(name = "Gender")
+      scale_fill_manual(name = "Gender", values = c("#03045e","#0077b6","#00b4d8","#90e0ef"))
     
     ggplotly(Plot,tooltip = c("x", "y")) %>%
       layout(title = list(text = paste0("Saudi Arabia's Population by Age Groups and Gender",
@@ -207,6 +208,43 @@ shinyServer(function(input,output,session){
   output$plot12 <- renderPlotly({
     plot6()
   })
+  
+  #### tabItem 7
+  plot7 <- reactive({
+    
+    Plot <- PopulationinbroadAgeGroups %>%
+      group_by(age_groups,nationality) %>% 
+      summarise(Population = sum(population)) %>% 
+      mutate(`Age Group` = age_groups) %>%
+      
+      ggplot(aes(x = `Age Group`, y = Population, fill = nationality))+
+      geom_bar(position = "dodge", stat='identity')+
+      coord_flip()+
+      theme_classic() +
+      scale_y_continuous(labels = label_number(suffix = " M", scale = 1e-6)) +
+      theme(plot.margin = margin(2,0.5,0.5,0.5,"cm"),plot.title = element_text(size = 12)) +
+      xlab("Age Groups") +
+      ylab("Population (in Millions)") +
+      scale_fill_manual(name = "Nationality", values = c("#03045e","#0077b6","#00b4d8","#90e0ef"))
+    
+    
+    ggplotly(Plot,tooltip = c("x", "y")) %>%
+      layout(title = list(text = paste0("Saudi Arabia's Population by Age Groups and nationality",
+                                        '<br>',
+                                        '<sup>',
+                                        'Source: portal.saudicensus.sa','</sup>')))
+  })
+  
+  # Arabic page
+  output$plot13 <- renderPlotly({
+    plot7()
+  })
+  
+  # English page
+  output$plot14 <- renderPlotly({
+    plot7()
+  })
+  
   
 })
   
