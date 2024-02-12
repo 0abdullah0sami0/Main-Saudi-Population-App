@@ -41,8 +41,8 @@ We created a Shiny Application in a form of a Dashboard that uses visualizations
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[Product Name Screen Shot](English.png)
-[Product Name Screen Shot](Arabic.png)
+[![Product Name Screen Shot][product-screenshot]]
+[![Product Name Screen Shot][product-screenshot2]]
 
 We build a Shiny dashboard using Saudi census data, which contains a complete and accurate count of the Saudi population. Our online dashboard enables users to view the growth of Saudi Arabia's population between 2020 and 2022. Our study focused on examining various aspects of the Saudi population structure, including gender, nationalities, age groups, and life expectancy.
 
@@ -106,7 +106,8 @@ The source of all data used to created the Dashboard is Saudi census.
 [license-url]: https://github.com/0abdullah0sami0/Main-Saudi-Population-App/blob/master/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/abdullahalshalaan/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: English.png
+[product-screenshot2]: Arabic.png
 [RStudio.com]: https://img.shields.io/badge/RStudio-blue?style=for-the-badge&logo=rstudio
 [RStudio-url]: https://posit.co/download/rstudio-desktop/
 [Shiny.com]: https://img.shields.io/badge/Shiny-Package-blue?style=for-the-badge
