@@ -41,8 +41,8 @@ We created a Shiny Application in a form of a Dashboard that uses visualizations
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]
-[![Product Name Screen Shot][product-screenshot2]]
+![Product Name Screen Shot][product-screenshot]
+![Product Name Screen Shot][product-screenshot2]
 
 We build a Shiny dashboard using Saudi census data, which contains a complete and accurate count of the Saudi population. Our online dashboard enables users to view the growth of Saudi Arabia's population between 2020 and 2022. Our study focused on examining various aspects of the Saudi population structure, including gender, nationalities, age groups, and life expectancy.
 
