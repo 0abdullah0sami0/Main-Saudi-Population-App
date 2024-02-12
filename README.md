@@ -1,13 +1,7 @@
-# Shiny App for analyzing Saudi Arabia's Population
-
-We created a Shiny Application in a form of a Dashboard that uses visualizations to showcase the evolution of Saudi Arabia's Population between 2010 and 2022.
-
-![Plot](Plot.png)
-
 <a name="readme-top"></a>
 
-[![License][license-shield]][https://github.com/0abdullah0sami0/Main-Saudi-Population-App/blob/master/LICENSE.md]
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/abdullahalshalaan/]
+[![License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -47,8 +41,8 @@ We created a Shiny Application in a form of a Dashboard that uses visualizations
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](English.png)
-[![Product Name Screen Shot][product-screenshot]](Arabic.png)
+[Product Name Screen Shot](English.png)
+[Product Name Screen Shot](Arabic.png)
 
 We build a Shiny dashboard using Saudi census data, which contains a complete and accurate count of the Saudi population. Our online dashboard enables users to view the growth of Saudi Arabia's population between 2020 and 2022. Our study focused on examining various aspects of the Saudi population structure, including gender, nationalities, age groups, and life expectancy.
 
@@ -105,22 +99,13 @@ The source of all data used to created the Dashboard is Saudi census.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-https://shields.io/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[license-url]: https://github.com/0abdullah0sami0/Main-Saudi-Population-App/blob/master/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[linkedin-url]: https://www.linkedin.com/in/abdullahalshalaan/
 [product-screenshot]: images/screenshot.png
 [RStudio.com]: https://img.shields.io/badge/RStudio-blue?style=for-the-badge&logo=rstudio
 [RStudio-url]: https://posit.co/download/rstudio-desktop/
